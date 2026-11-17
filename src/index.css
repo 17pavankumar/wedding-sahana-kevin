@@ -1,0 +1,1807 @@
+/* ==========================================================================
+   SAHANA & KEVIN – LUXURY WEDDING INVITATION STYLESHEET
+   White Page Background with Deep Wine Cards & Golden Typography
+   ========================================================================== */
+
+:root {
+  /* Primary Color Palette */
+  --wine-deep: #4A1028;
+  --wine-burgundy: #641B38;
+  --wine-dark: #320A1C;
+  --wine-royal: #781E42;
+  --wine-shadow: #1F0510;
+
+  /* Gold Accents */
+  --gold-champagne: #D4AF62;
+  --gold-metallic: #C5A04D;
+  --gold-soft: #E8D39B;
+  --gold-dark: #8A6B2D;
+  --gold-light: #FFF1D0;
+
+  /* Ivory Accents */
+  --ivory: #FFF7E8;
+  --ivory-dim: #E3D9C6;
+  --ivory-muted: #B8A892;
+
+  /* Background Palette (Clean luxury white/off-white) */
+  --page-bg: #FAF8F5;
+  --page-bg-pure: #FFFFFF;
+
+  /* Gradients */
+  --gold-gradient: linear-gradient(135deg, #FFF7E8 0%, #D4AF62 45%, #C5A04D 70%, #9C7729 100%);
+  --gold-gradient-subtle: linear-gradient(135deg, rgba(212, 175, 98, 0.25) 0%, rgba(197, 160, 77, 0.08) 100%);
+  --card-wine-gradient: linear-gradient(150deg, #50132D 0%, #3B0A20 50%, #250514 100%);
+
+  /* Fonts */
+  --font-calligraphy: 'Alex Brush', 'Great Vibes', cursive;
+  --font-heading: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-subheading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-royal: 'Cinzel', serif;
+}
+
+/* Base Reset & Background: Luxury White */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--page-bg);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--page-bg);
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(212, 175, 98, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 85% 60%, rgba(100, 27, 56, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF8F5 50%, #F5F0EB 100%);
+  background-attachment: fixed;
+  color: var(--wine-dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Utility Classes */
+.text-gold-champagne { color: var(--gold-champagne) !important; }
+.text-gold-metallic { color: var(--gold-metallic) !important; }
+.text-gold-soft { color: var(--gold-soft) !important; }
+.text-ivory { color: var(--ivory) !important; }
+.text-ivory-dim { color: var(--ivory-dim) !important; }
+.text-ivory-muted { color: var(--ivory-muted) !important; }
+
+/* Outside-card headings on white background */
+.text-wine-heading {
+  color: var(--wine-deep) !important;
+  font-family: var(--font-heading);
+  letter-spacing: 2px;
+}
+
+.text-wine-accent {
+  color: var(--wine-royal) !important;
+  font-family: var(--font-body);
+}
+
+.text-wine-quote {
+  color: var(--wine-burgundy) !important;
+  font-family: var(--font-subheading);
+}
+
+.tracking-wide { letter-spacing: 2px; }
+.tracking-wider { letter-spacing: 3.5px; }
+.tracking-widest { letter-spacing: 5px; }
+
+/* Metallic Gold Shimmer Effect */
+.gold-shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #D4AF62 0%,
+    #FFF7E8 30%,
+    #C5A04D 50%,
+    #FFF7E8 70%,
+    #D4AF62 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 5s ease-in-out infinite;
+}
+
+@keyframes goldShimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ==========================================================================
+   UNIFORM WIDTH LUXURY WINE CARDS WITH GOLD BORDERS (ALL SAME SIZE)
+   ========================================================================== */
+.invitation-card-frame,
+.family-card,
+.countdown-card,
+.order-of-events-card,
+.events-unified-card,
+.venue-card,
+.dress-code-card-main,
+.final-closing-card,
+.verse-card {
+  width: 100%;
+  max-width: 820px;
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--card-wine-gradient);
+  border: 1.5px solid rgba(212, 175, 98, 0.55);
+  box-shadow: 
+    0 22px 50px rgba(74, 16, 40, 0.22),
+    0 4px 15px rgba(0, 0, 0, 0.08),
+    inset 0 0 25px rgba(0, 0, 0, 0.35);
+  border-radius: 18px;
+  position: relative;
+  backdrop-filter: blur(10px);
+  color: var(--ivory);
+}
+
+@media (max-width: 768px) {
+  .invitation-card-frame,
+  .family-card,
+  .countdown-card,
+  .order-of-events-card,
+  .events-unified-card,
+  .venue-card,
+  .dress-code-card-main,
+  .final-closing-card,
+  .verse-card {
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(74, 16, 40, 0.18), inset 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Ornate Corner Placement */
+.corner-tl { position: absolute; top: 12px; left: 12px; }
+.corner-tr { position: absolute; top: 12px; right: 12px; }
+.corner-bl { position: absolute; bottom: 12px; left: 12px; }
+.corner-br { position: absolute; bottom: 12px; right: 12px; }
+
+@media (max-width: 768px) {
+  .corner-tl { top: 8px; left: 8px; }
+  .corner-tr { top: 8px; right: 8px; }
+  .corner-bl { bottom: 8px; left: 8px; }
+  .corner-br { bottom: 8px; right: 8px; }
+}
+
+/* Inner Double Border on Main Cover Card */
+.inner-gold-border {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: 1px solid rgba(212, 175, 98, 0.35);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   BUTTONS & CONTROLS
+   ========================================================================== */
+.btn-gold-solid {
+  background: var(--gold-gradient);
+  color: var(--wine-dark) !important;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(212, 175, 98, 0.45);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-gold-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 98, 0.65);
+  color: #1A050E !important;
+}
+
+.btn-gold-outline {
+  background: transparent;
+  color: var(--gold-soft) !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  border: 1px solid rgba(212, 175, 98, 0.65);
+  padding: 9px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-gold-outline:hover {
+  background: rgba(212, 175, 98, 0.15);
+  border-color: var(--gold-champagne);
+  color: var(--ivory) !important;
+  transform: translateY(-2px);
+}
+
+.btn-gold-sm {
+  background: var(--gold-gradient);
+  color: var(--wine-dark) !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   SECTION 01: BESPOKE HAUTE COUTURE 3D LUXURY ENVELOPE (SENIOR DEV MASTERWORK)
+   ========================================================================== */
+.luxury-envelope-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 10000;
+  background: 
+    radial-gradient(circle at 50% 25%, #FFFFFF 0%, #FAF8F5 40%, #EDE6DC 75%, #DCD1C0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.75s ease-out;
+  will-change: opacity;
+}
+
+.luxury-envelope-overlay.stage-revealing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.golden-bloom-screen {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 248, 235, 0.98) 0%, rgba(248, 238, 218, 0.95) 45%, rgba(212, 175, 98, 0.9) 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10050;
+  transition: opacity 1.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.golden-bloom-screen.bloom-active {
+  opacity: 1;
+}
+
+.envelope-ambient-halo {
+  position: absolute;
+  width: min(92vw, 560px);
+  height: min(92vw, 560px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 98, 0.28) 0%, rgba(100, 27, 56, 0.12) 45%, transparent 70%);
+  filter: blur(55px);
+  pointer-events: none;
+  animation: haloBreathe 5s ease-in-out infinite alternate;
+}
+
+@keyframes haloBreathe {
+  0% { transform: scale(0.92); opacity: 0.55; }
+  100% { transform: scale(1.12); opacity: 0.92; }
+}
+
+.envelope-scene-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+  max-height: 96dvh;
+  padding: 6px;
+  position: relative;
+  z-index: 5;
+}
+
+.envelope-hero-header {
+  margin-bottom: 12px;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s ease;
+}
+
+.envelope-hero-header.fade-away,
+.envelope-hero-footer.fade-away {
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+.hero-monogram-label {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  letter-spacing: 5px;
+  color: var(--wine-deep);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hero-invite-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 3.5px;
+  color: var(--wine-royal);
+  text-transform: uppercase;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.hero-gold-hairline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--gold-champagne);
+  font-size: 0.65rem;
+}
+
+.hero-gold-hairline::before,
+.hero-gold-hairline::after {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: var(--gold-gradient);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   3D ENVELOPE MASTER BOX (MATTE VELVET FINISH & MULTI-LAYER ORIGAMI)
+   ========================================================================== */
+.envelope-master-box {
+  width: min(84vw, 320px);
+  aspect-ratio: 320 / 440;
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  background: #250514;
+  box-shadow: 
+    0 35px 80px rgba(50, 10, 28, 0.48),
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(0, 0, 0, 0.85);
+  margin: 0 auto;
+  transition: transform 0.85s cubic-bezier(0.2, 0.9, 0.35, 1);
+}
+
+.envelope-master-box.box-lowered {
+  transform: translateY(48px) !important;
+}
+
+/* Layer 1: Interior Back Plate */
+.envelope-back-plate {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(160deg, #3B0920 0%, #250414 100%);
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.85);
+}
+
+.envelope-back-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(212, 175, 98, 0.22) 1.5px, transparent 2px),
+    radial-gradient(circle at 0 0, rgba(212, 175, 98, 0.15) 1.5px, transparent 2px);
+  background-size: 24px 24px, 24px 24px;
+  opacity: 0.65;
+}
+
+/* Layer 1.5: Divine Golden Rays & Behind-Card Aura (Feature #1) */
+.envelope-behind-rays {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(0) scale(0.9);
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s ease;
+  will-change: transform, opacity;
+}
+
+.envelope-behind-rays.rays-active {
+  opacity: 1;
+  transform: translateY(-68%) scale(1.05);
+}
+
+.envelope-behind-rays.rays-blooming {
+  opacity: 1;
+  transform: translateY(-68%) scale(1.4);
+  transition: transform 1.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 1.7s ease;
+}
+
+.card-behind-glow-core {
+  position: absolute;
+  inset: -25px;
+  border-radius: 24px;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(255, 240, 190, 0.95) 0%,
+    rgba(224, 186, 106, 0.75) 35%,
+    rgba(212, 175, 98, 0.35) 60%,
+    transparent 80%
+  );
+  filter: blur(28px);
+  animation: auraPulse 2.8s ease-in-out infinite alternate;
+}
+
+.ray-beam {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 320px;
+  height: 520px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 245, 215, 0.55) 0%,
+    rgba(212, 175, 98, 0.22) 45%,
+    transparent 80%
+  );
+  transform-origin: top center;
+  filter: blur(16px);
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.ray-beam-1 { transform: translate(-50%, -100%) rotate(-35deg); }
+.ray-beam-2 { transform: translate(-50%, -100%) rotate(-12deg); }
+.ray-beam-3 { transform: translate(-50%, -100%) rotate(12deg); }
+.ray-beam-4 { transform: translate(-50%, -100%) rotate(35deg); }
+
+@keyframes auraPulse {
+  0% { transform: scale(0.96); opacity: 0.85; filter: blur(24px); }
+  100% { transform: scale(1.1); opacity: 1; filter: blur(34px); }
+}
+
+/* Layer 2: The Luxury Invitation Card (Slides Up on Tap) */
+.envelope-sliding-card {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  background: linear-gradient(155deg, #4A1028 0%, #30081A 65%, #1C030E 100%);
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1.05s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 1.05s ease;
+  will-change: transform;
+}
+
+.envelope-sliding-card.card-emerged {
+  transform: translateY(-68%) scale(1.05);
+  box-shadow: 
+    0 26px 65px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(212, 175, 98, 0.45),
+    inset 0 0 25px rgba(0, 0, 0, 0.85);
+}
+
+.sliding-card-gold-border {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(212, 175, 98, 0.65);
+  border-radius: 5px;
+  padding: 14px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.sliding-corner {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--gold-champagne);
+  border-style: solid;
+}
+
+.sliding-corner.corner-tl { top: 3px; left: 3px; border-width: 1.5px 0 0 1.5px; }
+.sliding-corner.corner-tr { top: 3px; right: 3px; border-width: 1.5px 1.5px 0 0; }
+.sliding-corner.corner-bl { bottom: 3px; left: 3px; border-width: 0 0 1.5px 1.5px; }
+.sliding-corner.corner-br { bottom: 3px; right: 3px; border-width: 0 1.5px 1.5px 0; }
+
+.sliding-card-crest {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  margin-bottom: 5px;
+  box-shadow: 0 0 18px rgba(212, 175, 98, 0.6);
+}
+
+.sliding-crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.sliding-families-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.sliding-names-script {
+  font-family: var(--font-calligraphy);
+  font-size: 2.2rem;
+  line-height: 1.1;
+  color: var(--gold-champagne);
+  margin-bottom: 2px;
+  text-shadow: 0 0 15px rgba(212, 175, 98, 0.6);
+}
+
+.sliding-gold-divider {
+  color: var(--gold-champagne);
+  font-size: 0.75rem;
+  margin: 2px 0;
+}
+
+.sliding-invite-label {
+  font-family: var(--font-body);
+  font-size: 0.54rem;
+  letter-spacing: 1.8px;
+  color: var(--gold-soft);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.sliding-date-badge {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: var(--gold-champagne);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.sliding-venue-label {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  letter-spacing: 1.8px;
+  color: var(--ivory-dim);
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+/* Layer 3: Front Envelope Pocket (Left, Right, Bottom Folds + Vines) */
+.envelope-pocket-front {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  transition: transform 0.6s ease;
+}
+
+.pocket-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.envelope-floral-vine {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 48%;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.92;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+}
+
+.envelope-floral-vine.floral-left {
+  left: 0;
+}
+
+.envelope-floral-vine.floral-right {
+  right: 0;
+}
+
+/* Layer 4: 3D Top Flap (Points down when closed, flips 180° up on tap) */
+.envelope-top-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  transform-origin: top center;
+  z-index: 10;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.45, 1);
+  will-change: transform;
+}
+
+.envelope-top-flap.flap-opened {
+  transform: rotateX(180deg);
+  z-index: 1; /* Moves behind the sliding card once flipped */
+}
+
+.flap-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Layer 5: Royal Wax Seal Medallion */
+.envelope-wax-seal-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+}
+
+@media (min-width: 768px) {
+  .envelope-wax-seal-anchor {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+.envelope-wax-seal-anchor.seal-break {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.3);
+  pointer-events: none;
+}
+
+.seal-glow-halo {
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 175, 98, 0.5) 0%, rgba(100, 27, 56, 0.22) 50%, transparent 75%);
+  filter: blur(14px);
+  pointer-events: none;
+  animation: sealHaloBreathe 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes sealHaloBreathe {
+  0% { opacity: 0.55; transform: scale(0.94); }
+  100% { opacity: 1; transform: scale(1.12); }
+}
+
+.seal-medallion-badge {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 14px 26px rgba(10, 1, 5, 0.85));
+  transition: transform 0.35s ease;
+}
+
+.luxury-envelope-overlay:hover .seal-medallion-badge {
+  transform: scale(1.05);
+}
+
+.wax-seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Footer Tap Action Pill */
+.envelope-hero-footer {
+  margin-top: 14px;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s ease;
+}
+
+.luxury-tap-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 28px;
+  background: rgba(50, 10, 28, 0.92);
+  border: 1px solid rgba(212, 175, 98, 0.65);
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 15px rgba(212, 175, 98, 0.25);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.luxury-tap-pill:hover,
+.luxury-envelope-overlay:hover .luxury-tap-pill {
+  border-color: var(--gold-champagne);
+  box-shadow: 0 8px 25px rgba(74, 16, 40, 0.45), 0 0 20px rgba(212, 175, 98, 0.45);
+  transform: translateY(-2px);
+}
+
+.luxury-tap-pill:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.gold-glow-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--gold-champagne);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold-champagne);
+  animation: pulseDot 1.6s infinite;
+}
+
+.tap-pill-text {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold-champagne);
+}
+
+.tap-pill-sparkle {
+  color: var(--gold-soft);
+  animation: rotateSparkle 6s linear infinite;
+}
+
+@keyframes rotateSparkle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tap-hint-caption {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  color: var(--wine-royal);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+@keyframes rotateSparkle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.tap-hint-caption {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 1.2px;
+  color: var(--wine-royal);
+  margin-top: 6px;
+  margin-bottom: 0;
+}
+
+.touch-sub-hint {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 1px;
+  color: var(--wine-royal);
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+.pulsing-gold-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--gold-champagne);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--gold-champagne);
+  animation: pulseDot 1.5s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.5); }
+}
+
+.badge-text {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: var(--gold-champagne);
+}
+
+.badge-sparkle-icon {
+  color: var(--gold-champagne);
+}
+
+.touch-sub-hint {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  color: var(--wine-royal);
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+/* ==========================================================================
+   MAIN INVITATION PAGES
+   ========================================================================== */
+.wedding-main-content {
+  position: relative;
+  z-index: 5;
+  opacity: 1;
+}
+
+/* Refined gap cadence between luxury cards */
+.wedding-main-content section {
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+@media (min-width: 768px) {
+  .wedding-main-content section {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+}
+
+.hero-cover-section {
+  padding-top: 92px !important;
+  padding-bottom: 16px !important;
+}
+
+.thank-you-section {
+  padding-bottom: 40px !important;
+}
+
+/* NAVBAR */
+.wedding-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 16px 0;
+  transition: all 0.35s ease;
+}
+
+.wedding-navbar.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(212, 175, 98, 0.35);
+  padding: 10px 0;
+  box-shadow: 0 6px 20px rgba(74, 16, 40, 0.08);
+}
+
+.brand-crest {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wine-deep);
+  box-shadow: 0 0 10px rgba(212, 175, 98, 0.3);
+}
+
+.brand-names {
+  font-family: var(--font-calligraphy);
+  font-size: 1.55rem;
+  color: var(--wine-deep);
+  letter-spacing: 1px;
+}
+
+.nav-item-link {
+  color: var(--wine-deep);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.nav-item-link:hover {
+  color: var(--gold-champagne);
+}
+
+.mobile-nav-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu-drawer {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid rgba(212, 175, 98, 0.3);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 15px 30px rgba(74, 16, 40, 0.12);
+}
+
+.mobile-nav-link {
+  color: var(--wine-deep);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  transition: color 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  color: var(--gold-champagne);
+}
+
+/* ==========================================================================
+   SECTION 02: HERO COVER WITH OFFICIAL LOGO CREST
+   ========================================================================== */
+.hero-cover-section {
+  padding-top: 100px;
+}
+
+/* Feature #2: Card Scale-to-Screen Continuity on Reveal */
+.invitation-card-frame.hero-revealed-enter {
+  animation: heroCardBloomEnter 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, box-shadow;
+}
+
+@keyframes heroCardBloomEnter {
+  0% {
+    transform: scale(0.96) translateY(14px);
+    box-shadow: 
+      0 35px 70px rgba(0, 0, 0, 0.55),
+      0 0 45px rgba(212, 175, 98, 0.35);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    box-shadow: 
+      0 22px 50px rgba(74, 16, 40, 0.22),
+      0 4px 15px rgba(0, 0, 0, 0.08),
+      inset 0 0 25px rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* Feature #3: Golden Stardust Dissolve Glow Overlay */
+.hero-stardust-dissolve-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: radial-gradient(
+    circle at 50% 25%,
+    rgba(255, 238, 185, 0.28) 0%,
+    rgba(212, 175, 98, 0.12) 45%,
+    transparent 75%
+  );
+  pointer-events: none;
+  opacity: 0;
+  animation: stardustDissolveAnim 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  z-index: 2;
+}
+
+@keyframes stardustDissolveAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+/* Feature #4: Calligraphy Gold Sheen Sweep on Reveal */
+.couple-names-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 4px 14px;
+}
+
+.couple-names-wrapper.reveal-sheen::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -120%;
+  width: 45%;
+  height: 140%;
+  background: linear-gradient(
+    115deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 238, 185, 0.95) 55%,
+    rgba(212, 175, 98, 0.6) 65%,
+    transparent 85%
+  );
+  transform: skewX(-25deg);
+  animation: heroSheenSweep 1.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
+  pointer-events: none;
+}
+
+@keyframes heroSheenSweep {
+  0% {
+    left: -120%;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    left: 170%;
+    opacity: 0;
+  }
+}
+
+.official-logo-crest-badge {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(212, 175, 98, 0.4);
+  animation: elegantCrestGlow 4s ease-in-out infinite alternate;
+}
+
+@media (min-width: 576px) {
+  .official-logo-crest-badge {
+    width: 106px;
+    height: 106px;
+  }
+}
+
+.official-logo-crest-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Elegant light sheen reflection sweeping across the logo */
+.official-logo-crest-badge::after {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 247, 232, 0) 42%,
+    rgba(255, 247, 232, 0.45) 50%,
+    rgba(255, 247, 232, 0) 58%,
+    transparent 65%
+  );
+  animation: logoSheenSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes logoSheenSweep {
+  0%, 55% {
+    transform: translateX(-80%) rotate(25deg);
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+  85%, 100% {
+    transform: translateX(80%) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes elegantCrestGlow {
+  0% {
+    box-shadow: 
+      0 6px 18px rgba(0, 0, 0, 0.55),
+      0 0 14px rgba(212, 175, 98, 0.35);
+  }
+  100% {
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.65),
+      0 0 26px rgba(212, 175, 98, 0.6);
+  }
+}
+
+.invite-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+}
+
+.invite-subtext {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+}
+
+.invite-action {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  letter-spacing: 2.5px;
+  font-style: italic;
+}
+
+.couple-names-calligraphy {
+  font-family: var(--font-calligraphy);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (min-width: 576px) {
+  .couple-names-calligraphy {
+    font-size: 3.6rem;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  .couple-names-calligraphy {
+    font-size: 4.4rem;
+  }
+}
+
+.couple-names-calligraphy .ampersand {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--gold-soft);
+  font-style: italic;
+  margin: 0 4px;
+}
+
+.date-number {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  letter-spacing: 3px;
+  font-weight: 600;
+}
+
+.day-time-pill {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+}
+
+.day-time-pill .separator {
+  margin: 0 10px;
+  color: var(--gold-champagne);
+}
+
+.scroll-indicator-link {
+  transition: transform 0.3s ease;
+}
+
+.scroll-indicator-link:hover {
+  transform: translateY(3px);
+}
+
+.scroll-text {
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.scroll-chevron {
+  animation: bounceDown 2s infinite;
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+
+/* ==========================================================================
+   SECTION 03: BIBLE VERSE
+   ========================================================================== */
+.bible-verse-quote {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  line-height: 1.4;
+  color: var(--gold-champagne);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .bible-verse-quote {
+    font-size: 2.25rem;
+  }
+}
+
+.bible-verse-reference {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  margin-top: 10px;
+}
+
+.welcome-message {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--ivory);
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   SECTION 04: FAMILY DETAILS
+   ========================================================================== */
+.family-person-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  color: var(--gold-soft);
+  background: rgba(212, 175, 98, 0.12);
+  padding: 3px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 98, 0.3);
+  margin-bottom: 10px;
+}
+
+.family-person-name {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+
+.family-parents-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.family-address {
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.family-divider-vertical {
+  width: 1px;
+  height: 60px;
+  background: var(--gold-gradient);
+}
+
+.family-crest-circle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--wine-burgundy);
+  box-shadow: 0 0 14px rgba(212, 175, 98, 0.35);
+}
+
+.family-divider-horizontal {
+  height: 1px;
+  background: var(--gold-gradient);
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   SECTION 05: COUNTDOWN
+   ========================================================================== */
+.countdown-title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+
+@media (min-width: 768px) {
+  .countdown-title {
+    font-size: 2.2rem;
+  }
+}
+
+.countdown-unit-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 54px;
+}
+
+@media (min-width: 576px) {
+  .countdown-unit-box {
+    min-width: 75px;
+  }
+}
+
+.unit-number-card {
+  width: 54px;
+  height: 58px;
+  background: rgba(35, 7, 18, 0.85);
+  border: 1px solid rgba(212, 175, 98, 0.45);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(212, 175, 98, 0.08);
+}
+
+@media (min-width: 576px) {
+  .unit-number-card {
+    width: 75px;
+    height: 80px;
+  }
+}
+
+.unit-number {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media (min-width: 576px) {
+  .unit-number {
+    font-size: 2.4rem;
+  }
+}
+
+.unit-label {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 1.5px;
+  margin-top: 5px;
+}
+
+.unit-separator {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   SECTION 06: WEDDING & RECEPTION EVENTS (SINGLE ELEGANT WINE CARD)
+   ========================================================================== */
+.events-unified-card {
+  /* Inherits uniform luxury wine card styling (width: 100%, max-width: 820px, border-radius: 18px) */
+}
+
+.events-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(212, 175, 98, 0.12);
+  border: 1px solid rgba(212, 175, 98, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(212, 175, 98, 0.25);
+}
+
+.timeline-eyebrow {
+  font-family: var(--font-body);
+  letter-spacing: 2.5px;
+  color: var(--gold-soft);
+  font-size: 0.76rem;
+}
+
+.timeline-script-title {
+  font-family: var(--font-calligraphy);
+  font-size: 2.3rem;
+  line-height: 1.1;
+  color: var(--gold-champagne);
+  text-shadow: 0 0 18px rgba(212, 175, 98, 0.5);
+}
+
+@media (min-width: 768px) {
+  .timeline-script-title {
+    font-size: 3.2rem;
+  }
+}
+
+.timeline-date-chip {
+  font-family: var(--font-body);
+  letter-spacing: 1px;
+  color: var(--gold-soft);
+}
+
+.event-schedule-chip {
+  background: rgba(22, 3, 11, 0.65);
+  border: 1px solid rgba(212, 175, 98, 0.35);
+  border-radius: 10px;
+  box-shadow: 
+    0 10px 24px rgba(0, 0, 0, 0.4),
+    inset 0 0 18px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-schedule-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 175, 98, 0.6);
+  box-shadow: 
+    0 14px 28px rgba(74, 16, 40, 0.4),
+    0 0 16px rgba(212, 175, 98, 0.25),
+    inset 0 0 18px rgba(0, 0, 0, 0.5);
+}
+
+.event-chip-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+}
+
+.event-chip-time {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  letter-spacing: 2px;
+  color: var(--gold-metallic);
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   SECTION 07: VENUE & MAP
+   ========================================================================== */
+/* ==========================================================================
+   SECTION 07: VENUE & MAP (COMPACT & MOBILE-OPTIMIZED)
+   ========================================================================== */
+.venue-image-frame {
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 98, 0.5);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  height: 180px;
+}
+
+@media (min-width: 768px) {
+  .venue-image-frame {
+    height: 230px;
+  }
+}
+
+.venue-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.venue-image-frame:hover .venue-img {
+  transform: scale(1.04);
+}
+
+.venue-image-gold-border {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(212, 175, 98, 0.4);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.venue-image-caption {
+  background: linear-gradient(180deg, transparent 0%, rgba(32, 5, 17, 0.95) 100%);
+}
+
+.btn-photo-pill {
+  background: rgba(30, 5, 16, 0.85);
+  border: 1px solid rgba(212, 175, 98, 0.4);
+  color: var(--gold-soft);
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+
+.btn-photo-pill.active,
+.btn-photo-pill:hover {
+  background: var(--gold-champagne);
+  color: var(--wine-dark);
+  font-weight: 600;
+  border-color: var(--gold-champagne);
+}
+
+.venue-info-badge {
+  background: rgba(212, 175, 98, 0.12);
+  border: 1px solid rgba(212, 175, 98, 0.35);
+  border-radius: 15px;
+}
+
+.venue-name-display {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 768px) {
+  .venue-name-display {
+    font-size: 2.2rem;
+  }
+}
+
+.timing-chip-compact {
+  background: rgba(30, 5, 16, 0.65);
+  border: 1px solid rgba(212, 175, 98, 0.3);
+  border-radius: 8px;
+}
+
+.map-frame-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 98, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.map-floating-overlay {
+  background: rgba(32, 5, 17, 0.92);
+  border-top: 1px solid rgba(212, 175, 98, 0.25);
+}
+
+/* ==========================================================================
+   SECTION 08: MINIMAL LUXURY DRESS CODE (MATCHING REFERENCE IMAGE 3)
+   ========================================================================== */
+.dress-sparkle-badge {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(212, 175, 98, 0.12);
+  border: 1px solid rgba(212, 175, 98, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px rgba(212, 175, 98, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.dress-code-card-main:hover .dress-sparkle-badge {
+  transform: rotate(15deg) scale(1.05);
+}
+
+.dress-eyebrow-minimal {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  letter-spacing: 4px;
+}
+
+.dress-title-minimal {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  letter-spacing: 1.5px;
+  line-height: 1.35;
+}
+
+@media (min-width: 576px) {
+  .dress-title-minimal {
+    font-size: 1.95rem;
+  }
+}
+
+.dress-subtitle-minimal {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-occasion-tag {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 2.2px;
+  color: var(--gold-champagne);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 16px;
+  background: rgba(212, 175, 98, 0.12);
+  border: 1px solid rgba(212, 175, 98, 0.42);
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(212, 175, 98, 0.16);
+}
+
+/* ==========================================================================
+   SECTION 09: FINAL THANK YOU (AT LAST)
+   ========================================================================== */
+.closing-monogram-glow {
+  width: 76px;
+  height: 76px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .closing-monogram-glow {
+    width: 86px;
+    height: 86px;
+  }
+}
+
+.monogram-official-logo-wrap {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 6px 18px rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(212, 175, 98, 0.45);
+  animation: elegantCrestGlow 4s ease-in-out infinite alternate;
+}
+
+.monogram-official-logo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 247, 232, 0) 42%,
+    rgba(255, 247, 232, 0.45) 50%,
+    rgba(255, 247, 232, 0) 58%,
+    transparent 65%
+  );
+  animation: logoSheenSweep 5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.monogram-official-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.closing-main-text {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .closing-main-text {
+    font-size: 2.1rem;
+  }
+}
+
+.closing-couple-names {
+  font-family: var(--font-calligraphy);
+  font-size: 3.2rem;
+  line-height: 1.2;
+  text-shadow: 0 0 25px rgba(212, 175, 98, 0.45);
+}
+
+@media (min-width: 768px) {
+  .closing-couple-names {
+    font-size: 4.5rem;
+  }
+}
+
+/* ==========================================================================
+   AUDIO PLAYER FLOATING BUTTON
+   ========================================================================== */
+.audio-btn {
+  background: linear-gradient(135deg, #4A1028 0%, #250614 100%);
+  border: 1px solid var(--gold-champagne);
+  border-radius: 30px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(74, 16, 40, 0.4), 0 0 15px rgba(212, 175, 98, 0.3);
+  transition: all 0.3s ease;
+}
+
+.audio-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(74, 16, 40, 0.6), 0 0 20px rgba(212, 175, 98, 0.5);
+}
+
+.audio-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--gold-champagne);
+  text-transform: uppercase;
+}
+
+.sound-wave-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 16px;
+}
+
+.sound-wave-bars .bar {
+  width: 3px;
+  background: var(--gold-champagne);
+  border-radius: 2px;
+  animation: soundBar 1s ease-in-out infinite alternate;
+}
+
+.bar-1 { height: 6px; animation-delay: 0.1s; }
+.bar-2 { height: 14px; animation-delay: 0.3s; }
+.bar-3 { height: 10px; animation-delay: 0.2s; }
+.bar-4 { height: 16px; animation-delay: 0.4s; }
+
+@keyframes soundBar {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+.btn-scroll-top {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--wine-deep);
+  border: 1.5px solid var(--gold-champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(74, 16, 40, 0.3);
+  transition: all 0.25s ease;
+}
+
+.btn-scroll-top:hover {
+  transform: translateY(-3px);
+  background: var(--wine-royal);
+}
